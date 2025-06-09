@@ -3,10 +3,8 @@ const Caution = () => {
     <>
       <div className="caution">
         <p>
-          To prevent bots and abuse, the Goerli faucet requires a minimum
-          mainnet balance of 0.001 ETH on the wallet address being used. Join
-          the Ethereum ecosystem migration! Please use the Sepolia faucet
-          instead.
+          ⚠️ Educational Purpose Only: This application is designed for learning blockchain development. 
+          To prevent abuse, a minimum balance requirement may apply. Always verify transactions before signing.
         </p>
       </div>
     </>

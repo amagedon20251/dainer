@@ -1,203 +1,263 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
-  align-items: center;
 }
 
 body {
-  background: #032041;
+  background: linear-gradient(135deg, #032041 0%, #1a365d 100%);
+  min-height: 100vh;
   display: flex;
-    
-    align-items: center;
-    width: 100%;
-    
-  
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .excuseMe {
-  margin: 100px;
- 
+  margin: 100px 0 0 0;
 }
 
 .excusesMe {
-  margin: 40px;
-
+  margin: 40px 0;
 }
 
 .header {
-  
   padding: 12px 30px;
   color: white;
   text-align: center;
   width: 100%;
-  top: 0;right: 0;left: 0;
+  top: 0;
   position: fixed;
-  background: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  z-index: 1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
 }
 
 .slider {
-  color:white;
+  color: white;
   text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 button {
   color: white;
-  padding: 8px 25px;
-  border-radius: 8px;
+  padding: 12px 30px;
+  border-radius: 12px;
   outline: none;
   cursor: pointer;
-  /* From https://css.glass */
-    background: rgba(12, 189, 13, 0.22);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.6px);
-    -webkit-backdrop-filter: blur(3.6px);
-    border: 1px solid rgba(12, 189, 13, 0.3);
-    font-size: 18px;
+  background: rgba(12, 189, 13, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(12, 189, 13, 0.4);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 150px;
 }
 
-button:hover {
-  backdrop-filter: blur(5.6px);
-    -webkit-backdrop-filter: blur(5.6px);
-    background: rgba(12, 189, 13, 0.55);
-    
+button:hover:not(:disabled) {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(12, 189, 13, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 40px rgba(12, 189, 13, 0.3);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.claim-button {
+  background: rgba(255, 165, 0, 0.3);
+  border: 1px solid rgba(255, 165, 0, 0.4);
+}
+
+.claim-button:hover:not(:disabled) {
+  background: rgba(255, 165, 0, 0.5);
+  box-shadow: 0 6px 40px rgba(255, 165, 0, 0.3);
 }
 
 .slider h1 {
   text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 40px;
-  margin: 14px;
+  letter-spacing: 3px;
+  font-size: clamp(28px, 5vw, 40px);
+  margin: 20px 0;
+  font-weight: 500;
+  background: linear-gradient(45deg, #fff, #a0d8ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .slider p {
-  
-  font-size: 21px;
-  margin: 14px;
+  font-size: 18px;
+  margin: 15px 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.message {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.message p {
+  margin: 0;
+  font-weight: 400;
 }
 
 .caution {
   color: white;
-  background: #ffa500;
-  padding: 22px 38px;
-  width: 70%;
+  background: rgba(255, 165, 0, 0.2);
+  border: 1px solid rgba(255, 165, 0, 0.4);
+  padding: 20px 30px;
+  width: 90%;
+  max-width: 800px;
   text-align: center;
-  margin: 12px auto;
-  border-radius: 4px;
-  color:white;
+  margin: 20px auto;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-
-
 .faq {
-  color: #52555b;
-  background: white;
-  padding: 22px 42px ;
-  border-radius: 8px ;
-  margin: 12px auto;
+  color: #2d3748;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 12px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
 
-  width: 70%;
+.faq h1 {
+  color: #1a202c;
+  margin-bottom: 25px;
+  font-size: 28px;
+  text-align: center;
 }
 
 .faq h4 {
-  margin-top: 21px;
-  color: #1f2431;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #2d3748;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .faq p {
   font-size: 16px;
+  line-height: 1.6;
+  color: #4a5568;
 }
 
 .footer {
   text-align: center;
-  color: aliceblue;
-  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 40px 0 20px 0;
+  font-size: 14px;
 }
 
 .txCard {
-  border-radius: 8px;
-  margin: 50px 12px ;
-  width: 70%;
-  margin: 1px auto;
-  
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .txHead {
   display: flex;
-  background: #5b50b7;
-  flex-wrap: wrap;
+  background: linear-gradient(135deg, #5b50b7, #7c3aed);
+  padding: 15px 20px;
+  color: white;
+}
+
+.txLeft, .txRight {
+  flex: 1;
   text-align: center;
-  padding: 12px;
-  border-radius: 8px 8px 0 0;
 }
 
 .txLeft {
-  flex: 50%;
-  
-
-
+  text-align: left;
 }
 
 .txRight {
-  flex: 50%;
-
+  text-align: right;
 }
 
 .txBody {
-  padding: 12px;
- 
-  border-radius: 0 0 8px 8px;
-  background: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(12.5px);
-    -webkit-backdrop-filter: blur(12.5px);
-    border-top: none;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    display: flex;
-    flex-wrap: wrap;
-      text-align: center;
-}
-
-.txBodyLeft {
-  flex: 50%;
-
-
-
-}
-
-.txBodyRight {
-  flex: 50%;
-
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  color: white;
 }
 
 .txBody p {
-  margin: 12px 4px;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
 }
-
 
 @media only screen and (max-width: 768px) {
-
   body {
-      padding: 18px;
+    padding: 0 15px;
+  }
 
-  
-    }
+  .txCard, .faq, .caution, .slider {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-.txCard, .faq, .caution {
-  width: 100%;
+  .faq {
+    padding: 20px 25px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .txHead, .txBody {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .txLeft, .txRight {
+    text-align: center;
+    margin: 5px 0;
+  }
 }
-
-
-
-  
-}
-
-
-
